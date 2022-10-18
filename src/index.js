@@ -5,6 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from './util/firebase';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+
+        .register('/serviceworker.js')
+
+        .then((res) => console.log('service worker registered'))
+
+        .catch((err) => console.log('service worker not registered', err));
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
