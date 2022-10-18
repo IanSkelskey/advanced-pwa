@@ -8,7 +8,7 @@ import firebase from './util/firebase';
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
 
-        .register('/serviceworker.js')
+        .register('/advanced-pwa/serviceworker.js')
 
         .then((res) => console.log('service worker registered'))
 
