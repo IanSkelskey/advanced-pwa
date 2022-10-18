@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <br></br>
         <a
             className="App-link"
             href="https://github.com/IanSkelskey"
