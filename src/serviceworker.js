@@ -1,7 +1,5 @@
 const staticReactApp = 'react-app';
-const assets = [
-    '/',
-];
+const assets = ['/'];
 
 self.addEventListener('install', (installEvent) => {
     installEvent.waitUntil(
