@@ -1,5 +1,8 @@
+import Game from '../tictactoe/Game';
+import '../styles/TicTacToe.css'
+
 const TicTacToe = () => {
-    return <h1>Tic-Tac-Toe</h1>;
+    return <Game />;
 };
 
 export default TicTacToe;
