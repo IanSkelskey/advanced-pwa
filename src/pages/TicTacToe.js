@@ -1,8 +1,11 @@
+import React from 'react';
 import Game from '../tictactoe/Game';
 import '../styles/TicTacToe.css';
 
-const TicTacToe = () => {
-    return <Game />;
-};
+class TicTacToe extends React.Component {
+    render() {
+        return <Game />;
+    }
+}
 
 export default TicTacToe;

@@ -4,6 +4,7 @@ import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+// eslint-disable-next-line no-unused-vars
 import firebase from './util/firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
