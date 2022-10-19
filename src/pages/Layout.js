@@ -7,7 +7,7 @@ class Layout extends React.Component {
         return (
             <>
                 <Nav />
-                <Outlet className="main"/>
+                <Outlet className="main" />
             </>
         );
     }
