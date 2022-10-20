@@ -1,9 +1,12 @@
 import React from 'react';
 import Game from '../tictactoe/Game';
-import '../styles/TicTacToe.css';
 
 function TicTacToe() {
-    return <Game/>;
+    return(
+        <div className={'content'}>
+            <Game/>
+        </div>
+    );
 }
 
 export default TicTacToe;

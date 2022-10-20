@@ -1,7 +1,5 @@
-import { useState } from 'react';
-
-function Square({num}) {
-    return <button className='square'>{num}</button>;
+function Square(props) {
+    return <button className='square' onClick={props.onClick}>{props.value}</button>;
 }
 
 export default Square;
