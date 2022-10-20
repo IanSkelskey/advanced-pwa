@@ -85,8 +85,4 @@ function Board() {
     );
 }
 
-// function renderSquare(i) {
-//     return <Square />;
-// }
-
 export default Board;
