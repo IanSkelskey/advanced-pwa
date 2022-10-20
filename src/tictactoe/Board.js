@@ -64,15 +64,11 @@ function Board() {
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-<<<<<<< HEAD
                 if(squares[a] !== null && squares[b] !== null && squares[c] !== null) {
                     state.winningSquares = [a, b, c];
                     for(let i = 0; i < 3; i++) {
                         console.log(state.winningSquares[i]);
                     }
-=======
-                if (squares[a] !== null && squares[b] !== null && squares[c] !== null) {
->>>>>>> e8001f47929d793f6dfe2d333a236c3ec8b6a87c
                     return squares[a];
                 }
             }
