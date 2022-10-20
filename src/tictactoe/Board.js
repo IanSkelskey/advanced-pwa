@@ -3,7 +3,7 @@ import Square from './Square';
 
 function Board() {
     const [state, setState] = useState({
-        status: "Welcome to Tic-Tac-Toe. X goes first!",
+        status: 'Welcome to Tic-Tac-Toe. X goes first!',
         squares: Array(9).fill(null),
         xIsNext: true,
     });
@@ -55,7 +55,7 @@ function Board() {
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                if(squares[a] !== null && squares[b] !== null && squares[c] !== null) {
+                if (squares[a] !== null && squares[b] !== null && squares[c] !== null) {
                     return squares[a];
                 }
             }
