@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Square( {v} ) {
+function Square() {
     const [value, setValue] = useState(0);
     return <button className='square'>{value}</button>;
 }
