@@ -2,9 +2,9 @@ import React from 'react';
 import Game from '../tictactoe/Game';
 
 function TicTacToe() {
-    return(
+    return (
         <div className={'content'}>
-            <Game/>
+            <Game />
         </div>
     );
 }

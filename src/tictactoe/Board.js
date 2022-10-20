@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Square from './Square';
 
 function Board() {
-
-    const [state, setState] =
-        useState({
-            squares: Array(9).fill('\n'),
-            xIsNext: true,
-        });
+    const [state, setState] = useState({
+        squares: Array(9).fill('\n'),
+        xIsNext: true,
+    });
 
     function renderBoard() {
         let board = [];
@@ -18,7 +16,7 @@ function Board() {
     }
 
     function renderSquare(i) {
-        return <Square value={state.squares[i]} onClick={() => handleClick(i)}/>;
+        return <Square value={state.squares[i]} onClick={() => handleClick(i)} />;
     }
 
     function handleClick(i) {
@@ -34,14 +32,11 @@ function Board() {
     const status = 'Next player: ' + (state.xIsNext ? 'X' : 'O');
     return (
         <div>
-            <h2 className='status'>{status}</h2>
-            <div className='board'>
-                {renderBoard()}
-            </div>
+            <h2 className="status">{status}</h2>
+            <div className="board">{renderBoard()}</div>
         </div>
     );
 }
-
 
 // function renderSquare(i) {
 //     return <Square />;
