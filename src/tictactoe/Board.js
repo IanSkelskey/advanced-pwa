@@ -22,6 +22,7 @@ function Board() {
             state.status = 'Next player: ' + (state.xIsNext ? 'X' : 'O');
         }
 
+        console.log(state);
         return board;
     }
 
