@@ -72,7 +72,7 @@ body {
     margin: 10px;
 }
 
-.square {
+.blue-square {
     font-size: xxx-large;
     background: #1da1f2;
     color: white;
@@ -86,8 +86,29 @@ body {
     box-sizing: border-box;
 }
 
-.square:after {
+.blue-square:after {
     content: '';
     display: block;
     padding-bottom: 100%;
 }
+
+.orange-square {
+    font-size: xxx-large;
+    background: coral;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #282c34;
+    border-style: solid;
+    border-width: 4pt;
+    box-sizing: border-box;
+}
+
+.orange-square:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
