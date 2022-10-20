@@ -3,7 +3,7 @@ import Square from './Square';
 
 function Board() {
     const [state, setState] = useState({
-        status: "X goes first!",
+        status: 'X goes first!',
         squares: Array(9).fill(null),
         winningSquares: [-1, -1, -1],
         xIsNext: true,
@@ -27,15 +27,16 @@ function Board() {
 
     function isWinningSquare(i) {
         return state.winningSquares?.includes(i);
-
     }
 
     function renderSquare(i) {
         let color = 'blue';
-        if(isWinningSquare(i)) {
-            color = 'orange'
+        if (isWinningSquare(i)) {
+            color = 'orange';
         }
-        return <Square value={state.squares[i]} color={color} key={i} onClick={() => handleClick(i)} />;
+        return (
+            <Square value={state.squares[i]} color={color} key={i} onClick={() => handleClick(i)} />
+        );
     }
 
     function handleClick(i) {
@@ -64,9 +65,9 @@ function Board() {
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                if(squares[a] !== null && squares[b] !== null && squares[c] !== null) {
+                if (squares[a] !== null && squares[b] !== null && squares[c] !== null) {
                     state.winningSquares = [a, b, c];
-                    for(let i = 0; i < 3; i++) {
+                    for (let i = 0; i < 3; i++) {
                         console.log(state.winningSquares[i]);
                     }
                     return squares[a];
