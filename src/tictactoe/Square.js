@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-function Square() {
-    const [value, setValue] = useState(0);
-    return <button className='square'>{value}</button>;
+function Square({num}) {
+    return <button className='square'>{num}</button>;
 }
 
 export default Square;
