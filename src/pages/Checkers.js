@@ -5,7 +5,7 @@ import Board from '../games/checkers/Board';
 function Checkers() {
     return (
         <div className={'content'}>
-            <Game board={<Board />}/>
+            <Game board={<Board />} />
         </div>
     );
 }

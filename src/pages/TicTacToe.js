@@ -5,7 +5,7 @@ import Board from '../games/tictactoe/Board';
 function TicTacToe() {
     return (
         <div className={'content'}>
-            <Game board={<Board />}/>
+            <Game board={<Board />} />
         </div>
     );
 }

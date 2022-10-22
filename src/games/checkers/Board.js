@@ -6,7 +6,7 @@ function Board() {
     const [squares, setSquares] = useState(Array(64).fill(null));
 
     function handleClick(i) {
-        console.log("You clicked square #" + i);
+        console.log('You clicked square #' + i);
     }
 
     function renderSquare(i, color) {
@@ -36,7 +36,9 @@ function Board() {
         <div>
             <h2 className="status">{status}</h2>
             <div className="board-8x8">{renderBoard()}</div>
-            <button className='button' onClick={newGame}>New Game</button>
+            <button className="button" onClick={newGame}>
+                New Game
+            </button>
         </div>
     );
 }
