@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import Square from './Square';
 
 function Board() {
-    const [state, setState] = useState({
-        status: 'X goes first!',
-        squares: Array(9).fill(null),
-        winningSquares: [-1, -1, -1],
-        xIsNext: true,
-    });
+    const [status, setStatus] = useState('X goes first!');
+    const [squares, setSquares] = useState(Array(9).fill(null));
+    const [winningSquares, setWinningSquares] = useState([-1, -1, -1]);
+    const [xIsNext, setXIsNext] = useState(true);
 
     function renderBoard() {
         let board = [];
@@ -15,19 +13,11 @@ function Board() {
             board[i] = renderSquare(i);
         }
 
-        const winner = calculateWinner(state.squares);
-        if (winner) {
-            state.status = 'Winner: ' + winner;
-        } else {
-            state.status = 'Next player: ' + (state.xIsNext ? 'X' : 'O');
-        }
-
-        console.log(state);
         return board;
     }
 
     function isWinningSquare(i) {
-        return state.winningSquares?.includes(i);
+        return winningSquares?.includes(i);
     }
 
     function renderSquare(i) {
@@ -36,20 +26,25 @@ function Board() {
             color = 'orange';
         }
         return (
-            <Square value={state.squares[i]} color={color} key={i} onClick={() => handleClick(i)} />
+            <Square value={squares[i]} color={color} key={i} onClick={() => handleClick(i)} />
         );
     }
 
     function handleClick(i) {
-        const squares = state.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
+        const newSquares = squares.slice();
+        const winner = calculateWinner(newSquares);
+        if (winner || newSquares[i]) {
             return;
         }
-        squares[i] = state.xIsNext ? 'X' : 'O';
-        setState({
-            squares: squares,
-            xIsNext: !state.xIsNext,
-        });
+        newSquares[i] = xIsNext ? 'X' : 'O';
+        setSquares(newSquares);
+        setXIsNext(!xIsNext);
+        const newWinner = calculateWinner(newSquares);
+        if (calculateWinner(newSquares)) {
+            setStatus('Winner: ' + newWinner);
+            return;
+        }
+        setStatus('Next player: ' + (xIsNext ? 'X' : 'O'));
     }
 
     function calculateWinner(squares) {
@@ -67,10 +62,7 @@ function Board() {
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
                 if (squares[a] !== null && squares[b] !== null && squares[c] !== null) {
-                    state.winningSquares = [a, b, c];
-                    for (let i = 0; i < 3; i++) {
-                        console.log(state.winningSquares[i]);
-                    }
+                    setWinningSquares([a, b, c]);
                     return squares[a];
                 }
             }
@@ -80,7 +72,7 @@ function Board() {
 
     return (
         <div>
-            <h2 className="status">{state.status}</h2>
+            <h2 className="status">{status}</h2>
             <div className="board">{renderBoard()}</div>
         </div>
     );
