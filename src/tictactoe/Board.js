@@ -79,7 +79,9 @@ function Board() {
         <div>
             <h2 className="status">{status}</h2>
             <div className="board">{renderBoard()}</div>
-            <button className='button' onClick={newGame}>New Game</button>
+            <button className="button" onClick={newGame}>
+                New Game
+            </button>
         </div>
     );
 }
