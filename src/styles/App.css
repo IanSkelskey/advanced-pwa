@@ -8,6 +8,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.button {
+    background: #1da1f2;
+    border-style: none;
+    color: white;
+    margin: 10pt;
+    padding: 10pt;
+}
+
 .content {
     max-height: 500pt;
     max-width: 500pt;

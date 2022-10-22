@@ -7,6 +7,13 @@ function Board() {
     const [winningSquares, setWinningSquares] = useState([-1, -1, -1]);
     const [xIsNext, setXIsNext] = useState(true);
 
+    function newGame() {
+        setStatus('X goes first!');
+        setSquares(Array(9).fill(null));
+        setWinningSquares([-1, -1, -1]);
+        setXIsNext(true);
+    }
+
     function renderBoard() {
         let board = [];
         for (let i = 0; i < 9; i++) {
@@ -36,13 +43,13 @@ function Board() {
         }
         newSquares[i] = xIsNext ? 'X' : 'O';
         setSquares(newSquares);
-        setXIsNext(!xIsNext);
         const newWinner = calculateWinner(newSquares);
-        if (calculateWinner(newSquares)) {
+        if (newWinner) {
             setStatus('Winner: ' + newWinner);
             return;
         }
-        setStatus('Next player: ' + (xIsNext ? 'X' : 'O'));
+        setXIsNext(!xIsNext);
+        setStatus('Next player: ' + (!xIsNext ? 'X' : 'O'));
     }
 
     function calculateWinner(squares) {
@@ -72,6 +79,7 @@ function Board() {
         <div>
             <h2 className="status">{status}</h2>
             <div className="board">{renderBoard()}</div>
+            <button className='button' onClick={newGame}>New Game</button>
         </div>
     );
 }
