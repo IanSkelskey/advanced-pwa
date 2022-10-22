@@ -25,9 +25,7 @@ function Board() {
         if (isWinningSquare(i)) {
             color = 'orange';
         }
-        return (
-            <Square value={squares[i]} color={color} key={i} onClick={() => handleClick(i)} />
-        );
+        return <Square value={squares[i]} color={color} key={i} onClick={() => handleClick(i)} />;
     }
 
     function handleClick(i) {
