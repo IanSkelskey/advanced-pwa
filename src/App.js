@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import TicTacToe from './pages/TicTacToe';
+import Checkers from './pages/Checkers';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="tictactoe" element={<TicTacToe />} />
+                    <Route path="checkers" element={<Checkers />} />
                 </Route>
             </Routes>
         </BrowserRouter>

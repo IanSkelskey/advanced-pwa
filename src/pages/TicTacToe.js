@@ -1,10 +1,11 @@
 import React from 'react';
-import Game from '../tictactoe/Game';
+import Game from '../games/Game';
+import Board from '../games/tictactoe/Board';
 
 function TicTacToe() {
     return (
         <div className={'content'}>
-            <Game />
+            <Game board={<Board />}/>
         </div>
     );
 }

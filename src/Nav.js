@@ -8,6 +8,7 @@ function Nav() {
             <ul className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/tictactoe">Tic-Tac-Toe</Link>
+                <Link to="/checkers">Checkers</Link>
             </ul>
         </div>
     );

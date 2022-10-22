@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Square from './Square';
+import Square from '../Square';
 
 function Board() {
     const [status, setStatus] = useState('X goes first!');
@@ -78,7 +78,7 @@ function Board() {
     return (
         <div>
             <h2 className="status">{status}</h2>
-            <div className="board">{renderBoard()}</div>
+            <div className="board-3x3">{renderBoard()}</div>
             <button className='button' onClick={newGame}>New Game</button>
         </div>
     );

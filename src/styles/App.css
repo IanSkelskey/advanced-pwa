@@ -71,51 +71,55 @@ body {
     }
 }
 
-.board {
+.board-3x3 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.board-8x8 {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .status {
     margin: 10px;
 }
 
-.blue-square {
+.square {
     font-size: xxx-large;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #282c34;
+    border-style: solid;
+    border-width: 4pt;
+    box-sizing: border-box;
+}
+
+.square:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.highlighted {
+    border-color: #81CE5E;
+}
+
+.gray {
+    background: gray;
+}
+
+.white {
+    background: white;
+}
+
+.blue {
     background: #1da1f2;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-color: #282c34;
-    border-style: solid;
-    border-width: 4pt;
-    box-sizing: border-box;
 }
 
-.blue-square:after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-}
-
-.orange-square {
-    font-size: xxx-large;
+.orange {
     background: coral;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-color: #282c34;
-    border-style: solid;
-    border-width: 4pt;
-    box-sizing: border-box;
-}
-
-.orange-square:after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
 }
