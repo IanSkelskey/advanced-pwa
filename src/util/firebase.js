@@ -34,7 +34,7 @@ const docData = {
 setDoc(testDoc, docData);
 console.log('Wrote to Firestore');
 
-const querySnapshot = await getDocs(collection(db, "users"));
+const querySnapshot = await getDocs(collection(db, 'users'));
 querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data()}`);
 });
