@@ -23,4 +23,3 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
-
