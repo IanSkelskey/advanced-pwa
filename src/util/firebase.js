@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getFirestore, doc, setDoc, getDocs, collection } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,18 +23,3 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
-
-const testDoc = doc(db, 'testCollection/testDocument');
-
-//write to the document
-console.log('Writing to Firestore');
-const docData = {
-    testfield: 'testing',
-};
-setDoc(testDoc, docData);
-console.log('Wrote to Firestore');
-
-const querySnapshot = await getDocs(collection(db, "users"));
-querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-});
