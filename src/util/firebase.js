@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +23,6 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
-
 
 const testDoc = doc(db, "testCollection/testDocument")
 
