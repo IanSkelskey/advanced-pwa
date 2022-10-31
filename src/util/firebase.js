@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,3 +24,13 @@ export const db = getFirestore(app);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
 
+const leaderboard = doc(db, 'leaderboard/checkers');
+function addToLeaderboard(person, score) {
+    const docData = {
+        person: person,
+        score: score
+    };
+    setDoc(leaderboard, docData);
+}
+
+addToLeaderboard('Ian', 999999)
