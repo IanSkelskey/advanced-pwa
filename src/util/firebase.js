@@ -29,9 +29,9 @@ const leaderboard = doc(db, 'leaderboard/checkers');
 function addToLeaderboard(person, score) {
     const docData = {
         person: person,
-        score: score
+        score: score,
     };
     setDoc(leaderboard, docData);
 }
 
-addToLeaderboard('Ian', 999999)
+addToLeaderboard('Ian', 999999);
