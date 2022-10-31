@@ -24,6 +24,7 @@ export const db = getFirestore(app);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
 
+// TODO: Remove this test functionality
 const leaderboard = doc(db, 'leaderboard/checkers');
 function addToLeaderboard(person, score) {
     const docData = {
